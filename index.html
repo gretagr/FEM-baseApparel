@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="style.min.css">
+  <link rel="stylesheet" href="style.css">
   <title>Frontend Mentor | Base Apparel coming soon page</title>
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600&display=swap" rel="stylesheet">
 </head>
@@ -18,11 +18,12 @@
       fashion store. Add your email below to stay up-to-date with
       announcements and our launch deals.</p>
     <form action="">
-    <input type="email" placeholder="Email Address">
-    <button type="button" name="button">
+    <input type="text" placeholder="Email Address">
+    <button type="button" name="button" id="submit">
       <img src="images/icon-arrow.svg" alt="">
     </button>
     </form>
+    <span id="error-msg">Please provide a valid email</span>
   </div>
   </section>
   <section class="hero">
@@ -35,5 +36,8 @@
       Coded by <a href="#">Greta Gr</a>.
     </p>
   </footer>
+  <script src="script.js">
+
+  </script>
 </body>
 </html>
