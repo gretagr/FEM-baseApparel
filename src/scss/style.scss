@@ -1,0 +1,141 @@
+// compileCompressed: ../../dist/css/$1.min.css
+@charset 'utf-8';
+@import 'variables';
+@import 'mixins';
+
+* {
+  box-sizing: border-box;
+}
+
+button, input {
+  outline: none;
+  border-radius: 50px;
+}
+
+body {
+ font: {
+   family: $font-family;
+   size: $body-copy;
+ }
+ margin: 0;
+}
+
+main {
+  @include flex(flex, space-between, center);
+  @include container-size(100vw, 100vh);
+}
+
+.text-block {
+  background: {
+    image: url('../../dist/img/bg-pattern-desktop.svg');
+    size: cover;
+    repeat: no-repeat;
+  }
+  @include flex(flex, flex-start, flex-start, column);
+  @include container-size(60%, 100vh);
+  padding-left: 10%;
+  &__logo {
+    margin: 8% 0 15%;
+  }
+}
+
+.heading {
+  font-size: $heading-big;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  margin: 0;
+  &__text--red {
+    color: $desaturated-red;
+    font-weight: 300;
+  }
+
+  &__text--black {
+    display: block;
+    font-weight: 600;
+    color: $dark-red;
+  }
+}
+
+.form-wrapper {
+  @include container-size(55%);
+  
+  &__description {
+    line-height: 1.8em;
+    color: $desaturated-red;
+    @include media($huge) {
+    margin: 8% 0;
+    }
+    @include media($large) {
+    margin: 6% 0;
+    }
+  }
+
+  &__error-msg {
+    color: $soft-red;
+    display: none;
+    font-size: $small-text;
+    margin: 10px 0 0 20px;
+  }
+}
+
+.subscription-form {
+  position: relative;
+  @include container-size(100%);
+  &::after {
+    content: '';
+    background: {
+      image: url('../../dist/img/icon-error.svg');
+      repeat: no-repeat;
+    }
+    display: none;
+    @include container-size(24px, 24px);
+    @include position(absolute, $top:calc(50% - 12px), $right:100px)
+  }
+  &__email {
+    @include container-size(100%, 50px);
+    padding: 10px 20px;
+    border: 1px solid $light-grey;
+    background: transparent;
+    &::placeholder {
+      color: $light-grey;
+      font-family: $font-family;
+    }
+  }
+}
+
+.error {
+      border: 1px solid $soft-red;
+      &::after {
+        display: block;
+      }
+}
+
+.submit-btn {
+  @include gradient(hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  @include position(absolute, $right:0);
+  @include container-size(85px, 50px);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 15px -12px rgba(0, 0, 0, 0.35);
+  &:hover {
+    @include gradient(lighten(hsl(0, 80%, 86%), 10%), lighten(hsl(0, 74%, 74%), 10%));
+    box-shadow: 2px 15px 20px -12px rgba(0, 0, 0, 0.35);
+  }
+}
+
+.hero-image {
+  background: {
+    image: url('../../dist/img/hero-desktop.jpg');
+    size: cover;
+    repeat: no-repeat;
+  }
+  @include container-size(40%, 100vh);
+}
+
+.attribution {
+  @include position(absolute, $right:1%, $bottom:0);
+  font-size: $small-text;
+  &__link {
+    color: $blue;
+  }
+}

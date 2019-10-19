@@ -3,41 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="dist/img/favicon-32x32.png">
+  <link rel="stylesheet" href="dist/css/style.min.css">
   <title>Frontend Mentor | Base Apparel coming soon page</title>
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600&display=swap" rel="stylesheet">
 </head>
 <body>
   <main>
-  <section class="text">
-    <img src="images/logo.svg" alt="" class="logo">
-    <h1 class="main-heading"><span>WE'RE</span><span>COMING</span><span>SOON</span></h1>
-  <div class="wrap">
-    <p class="desc">Hello fellow shoppers! We're currently building our new
-      fashion store. Add your email below to stay up-to-date with
-      announcements and our launch deals.</p>
-    <form action="">
-    <input type="text" placeholder="Email Address">
-    <button type="button" name="button" id="submit">
-      <img src="images/icon-arrow.svg" alt="">
-    </button>
-    </form>
-    <span id="error-msg">Please provide a valid email</span>
-  </div>
-  </section>
-  <section class="hero">
-    <!-- <img src="images/hero-desktop.jpg" alt=""> -->
-  </section>
+    <div class="text-block">
+      <img src="dist/img/logo.svg" alt="Base apparel logotype" class="text-block__logo">
+      <h1 class="heading">
+        <span class="heading__text--red">we're</span>
+        <span class="heading__text--black">coming</span>
+        <span class="heading__text--black">soon</span>
+      </h1>
+      <div class="form-wrapper">
+        <p class="form-wrapper__description">Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date with announcements and our launch deals.</p>
+        <form class="subscription-form" action="index.html">
+          <input class="subscription-form__email" type="text" name="email" aria-label="email" placeholder="Email Address">
+          <button class="submit-btn" type="button" name="submit" id="submit" title="submit">
+          <img src="dist/img/icon-arrow.svg" alt="Arrow icon">
+          </button>
+        </form>
+        <span class="form-wrapper__error-msg">Please provide a valid email</span>
+      </div>
+    </div>
+    <div class="hero-image"></div>
   </main>
   <footer>
     <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-      Coded by <a href="#">Greta Gr</a>.
+      Challenge by <a class="attribution__link" href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener">Frontend Mentor</a>.
+      Coded by <a class="attribution__link" href="https://github.com/gretagr" target="_blank" rel="noopener">Greta Gr</a>.
     </p>
   </footer>
-  <script src="script.js">
-
-  </script>
+  <script src="dist/js/script.js"></script>
 </body>
 </html>
