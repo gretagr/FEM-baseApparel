@@ -1,6 +1,8 @@
 $font-family: ('Josefin Sans', sans-serif);
-$body-copy: 100%;
+$body-copy: 16px;
 $heading-big: 4em;
+$heading-medium: 3.2em;
+$heading-small: 2.2em;
 $small-text: 0.7em;
 
 // colors
@@ -13,7 +15,7 @@ $blue: hsl(228, 45%, 44%);
 
 // media queries
 
-$small: 75px;
+$small: 375px;
 $medium: 800px;
-$large: 1000px;
-$huge: 1200px;
+$large: 1100px;
+$huge: 1400px;

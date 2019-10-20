@@ -7,7 +7,7 @@
   display: $display;
   justify-content: $justify;
   align-items: $align;
-  @if ($dir != 'row') {
+  @if ($dir != '') {
     flex-direction: $dir;
   }
 }

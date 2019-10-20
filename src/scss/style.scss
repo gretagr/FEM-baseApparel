@@ -20,27 +20,55 @@ body {
  margin: 0;
 }
 
-main {
-  @include flex(flex, space-between, center);
+.main-wrapper {
+  @include flex(flex, space-between, center, column-reverse);
   @include container-size(100vw, 100vh);
+  @include media($medium) {
+    @include flex(flex, space-between, center, row);
+  }
 }
 
 .text-block {
-  background: {
-    image: url('../../dist/img/bg-pattern-desktop.svg');
-    size: cover;
-    repeat: no-repeat;
-  }
+  @include gradient(lighten(hsl(0, 74%, 74%), 30%), lighten(hsl(0, 80%, 86%), 10%));
+  @include container-size(100%, 100vh);
+  padding: 0 5%;
+  text-align: center;
+  @include media($medium) {
+    background: {
+      image: url('../../dist/img/bg-pattern-desktop.svg');
+      size: cover;
+      repeat: no-repeat;
+    }
   @include flex(flex, flex-start, flex-start, column);
-  @include container-size(60%, 100vh);
-  padding-left: 10%;
+  @include container-size(50%, 100vh);
+  padding-left: 3%;
+  text-align: left;
+  }
+  @include media($large) {
+    padding-left: 10%;
+  }
+
   &__logo {
-    margin: 8% 0 15%;
+    position: absolute;
+    padding: 4%;
+    top: 0;
+    left: 0;
+    @include media($medium) {
+      position: static;
+      margin: 8% 0 15%;
+    }
   }
 }
 
 .heading {
-  font-size: $heading-big;
+  padding: 10% 0 0 0;
+  font-size: $heading-medium;
+  @include media($large) {
+    font-size: $heading-big;
+  }
+  @include media($medium) {
+    padding: 0;
+  }
   letter-spacing: 10px;
   text-transform: uppercase;
   margin: 0;
@@ -57,16 +85,25 @@ main {
 }
 
 .form-wrapper {
-  @include container-size(55%);
-  
+  margin: 8% auto;
+  // while screen is up to 800px
+  @include container-size(100%);
+  // while screen is bigger than 375px and smaller than 1200px
+  @include media($small) {
+    @include container-size(80%);
+  }
+  @include media($medium) {
+    @include container-size(70%);
+    margin: 8% 0;
+  }
+
+
   &__description {
     line-height: 1.8em;
     color: $desaturated-red;
-    @include media($huge) {
-    margin: 8% 0;
-    }
+    margin: 5% 0;
     @include media($large) {
-    margin: 6% 0;
+    margin: 8% 0;
     }
   }
 
@@ -129,7 +166,12 @@ main {
     size: cover;
     repeat: no-repeat;
   }
-  @include container-size(40%, 100vh);
+  @include container-size(100%, 100vh);
+  margin-top: calc(33px + 8%);
+  @include media($medium){
+    @include container-size(50%, 100vh);
+    margin-top: 0;
+  }
 }
 
 .attribution {
