@@ -19,14 +19,13 @@ body {
    size: $body-copy;
  }
  @include gradient(lighten(hsl(0, 74%, 74%), 30%), lighten(hsl(0, 80%, 86%), 10%));
-
  margin: 0;
 }
 
 .main-wrapper {
   @include flex(flex, space-between, center, column-reverse);
   @include container-size(100vw, 100%);
-  @include media($small) {
+  @include media($medium) {
     @include flex(flex, space-between, center, row);
     @include container-size(100vw, 100vh);
   }
@@ -35,31 +34,34 @@ body {
 .text-block {
   // background: transparent;
   @include container-size(100%, auto);
-  padding: 0 5%;
   text-align: center;
-  @include media($small) {
+
+  @include media($medium) {
     background: {
       image: url('../../dist/img/bg-pattern-desktop.svg');
       size: cover;
       repeat: no-repeat;
     }
+
     @include flex(flex, flex-start, flex-start, column);
-    @include container-size(100%, 100vh);
-    padding-left: 3%;
+    @include container-size(65%, 100vh);
+    padding: 3%;
     text-align: left;
   }
+
   @include media($large) {
-    padding-left: 10%;
+    padding: 5% 5% 0 5%;
+    @include container-size(100%, 100vh);
   }
 
   &__logo {
     position: absolute;
-    padding: 4%;
+    //padding: 4%;
     top: 0;
     left: 0;
-    @include media($small) {
+    @include media($medium) {
       position: static;
-      margin: 8% 0 15%;
+      margin: 0 0 15%;
     }
   }
 }
@@ -72,6 +74,7 @@ body {
   }
   @include media($medium) {
     padding: 0;
+    // margin-top: 6%;
   }
   letter-spacing: 10px;
   text-transform: uppercase;
@@ -91,14 +94,15 @@ body {
 .form-wrapper {
   margin: 8% auto;
   // while screen is up to 800px
-  @include container-size(100%);
+  @include container-size(90%);
   // while screen is bigger than 375px and smaller than 1200px
   @include media($small) {
-    @include container-size(80%);
+    @include container-size(70%);
   }
   @include media($medium) {
     @include container-size(70%);
-    margin: 6% 0;
+    margin: 8% 0;
+
   }
 
 
@@ -108,6 +112,9 @@ body {
     margin: 5% 0;
     @include media($large) {
     margin: 8% 0;
+    }
+    @include media($medium) {
+    margin: 0 0 10% 0;
     }
   }
 
@@ -172,7 +179,15 @@ body {
   }
   @include container-size(100%, 40vh);
   margin-top: calc(33px + 8%);
-  @include media($small){
+  @include media($small) {
+    background: {
+      image: url('../../dist/img/hero-tablet.jpg');
+      size: cover;
+      repeat: no-repeat;
+    }
+    @include container-size(100%, 50vh);
+  }
+  @include media($medium){
     @include container-size(100%, 100vh);
     margin-top: 0;
     background: {
@@ -190,7 +205,7 @@ body {
   &__link {
     color: $blue;
   }
-  @include media($small) {
+  @include media($medium) {
     @include position(absolute, $right:1%, $bottom:0);
     margin: 0;
     text-align: center;
