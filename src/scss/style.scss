@@ -160,11 +160,14 @@ body {
     }
   }
 
-  &__error-msg {
+  .message {
     display: none;
     margin: 10px 0 0 20px;
     font-size: $small-text;
     color: $soft-red;
+    &.err {
+      display: block;
+    }
   }
 }
 
@@ -172,22 +175,13 @@ body {
   position: relative;
   @include container-size(100%);
 
-  &::after {
-    @include position(absolute, $top:calc(50% - 12px), $right:100px)
-    display: none;
-    @include container-size(24px, 24px);
-    content: '';
-    background: {
-      image: url('../../dist/img/icon-error.svg');
-      repeat: no-repeat;
-    }
-  }
 
   &__email {
     @include container-size(100%, 50px);
     padding: 10px 20px;
     border: 1px solid $light-grey;
     background: transparent;
+
 
     &::-webkit-input-placeholder {
       font-family: $font-family;
@@ -216,14 +210,6 @@ body {
   }
 }
 
-.error {
-      border: 1px solid $soft-red;
-
-      &::after {
-        display: block;
-      }
-}
-
 .submit-btn {
   @include position(absolute, $right:0);
   @include container-size(85px, 50px);
@@ -235,6 +221,24 @@ body {
   &:hover {
     @include gradient(lighten(hsl(0, 80%, 86%), 10%), lighten(hsl(0, 74%, 74%), 10%));
     box-shadow: 2px 15px 20px -12px rgba(0, 0, 0, 0.35);
+  }
+}
+
+.hdden {
+  display: none;
+}
+
+.error {
+  border: 1px solid $soft-red;
+}
+
+.error-icon {
+  @include position(absolute, $top:calc(50% - 12px), $right:100px);
+  display: block;
+  @include container-size(24px, 24px);
+  background: {
+    image: url('../../dist/img/icon-error.svg');
+    repeat: no-repeat;
   }
 }
 
