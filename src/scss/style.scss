@@ -45,36 +45,40 @@ body {
 
     @include flex(flex, flex-start, flex-start, column);
     @include container-size(65%, 100vh);
-    padding: 3%;
+    padding: 5% 0 0 5%;
     text-align: left;
   }
 
   @include media($large) {
-    padding: 5% 5% 0 5%;
+    padding: 7% 5% 0 10%;
     @include container-size(100%, 100vh);
   }
 
   &__logo {
     position: absolute;
-    //padding: 4%;
+    padding: 4%;
     top: 0;
     left: 0;
     @include media($medium) {
       position: static;
       margin: 0 0 15%;
+      padding: 0;
     }
   }
 }
 
 .heading {
-  padding: 10% 0 0 0;
+  padding-top: 10%;
   font-size: $heading-medium;
   @include media($large) {
     font-size: $heading-big;
   }
   @include media($medium) {
-    padding: 0;
-    // margin-top: 6%;
+    margin-top: 6%;
+  }
+  @include media($large) {
+    margin-top: 0;
+    padding: 6% 0 0 0;
   }
   letter-spacing: 10px;
   text-transform: uppercase;
@@ -98,9 +102,15 @@ body {
   // while screen is bigger than 375px and smaller than 1200px
   @include media($small) {
     @include container-size(70%);
+    margin: 8% auto;
   }
+
   @include media($medium) {
-    @include container-size(70%);
+    @include container-size(80%);
+    margin: 8% 0;
+  }
+  @include media($large) {
+    // @include container-size(70%);
     margin: 8% 0;
 
   }
@@ -109,7 +119,7 @@ body {
   &__description {
     line-height: 1.8em;
     color: $desaturated-red;
-    margin: 5% 0;
+    margin: 15% 0;
     @include media($large) {
     margin: 8% 0;
     }
@@ -177,15 +187,15 @@ body {
     size: cover;
     repeat: no-repeat;
   }
-  @include container-size(100%, 40vh);
+  @include container-size(100%, 30vh);
   margin-top: calc(33px + 8%);
-  @include media($small) {
+  @include media(550px) {
     background: {
       image: url('../../dist/img/hero-tablet.jpg');
       size: cover;
       repeat: no-repeat;
     }
-    @include container-size(100%, 50vh);
+    @include container-size(100%, 45vh);
   }
   @include media($medium){
     @include container-size(100%, 100vh);
@@ -206,7 +216,7 @@ body {
     color: $blue;
   }
   @include media($medium) {
-    @include position(absolute, $right:1%, $bottom:0);
+    @include position(absolute, $right:1%, $bottom:1%);
     margin: 0;
     text-align: center;
   }
