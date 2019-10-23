@@ -1,17 +1,57 @@
+
+/* simple linear gradient. Takes two arguments: first and second color. Usage example:
+  @include gradient(#fff, #000);
+  Result:
+
+  el {
+    background: linear-gradient(135deg, #fff 0, #000 100%);
+  }
+*/
+
 @mixin gradient($first-color, $second-color) {
   background: linear-gradient(135deg, $first-color 0%, $second-color 100%);
 }
 
+/* flex-box model mixin. Takes up to 4 arguments. Fourth is optional. If not used, falls back to default. Uses most common flex-box properties. Usage:
+  @include flex(flex, center, flex-end, column);
+
+  Result:
+
+  el {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction column;
+  }
+*/
 
 @mixin flex($display, $justify, $align, $dir:'row') {
   display: $display;
-  justify-content: $justify;
-  align-items: $align;
+  -webkit-box-pack: $justify;
+          justify-content: $justify;
+  -webkit-box-align: $align;
+          align-items: $align;
   @if ($dir != '') {
-    flex-direction: $dir;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: $dir;
   }
 }
 
+/* Position rule set for element. Takes up to 5 arguments. 2 - 5 are optional. If not used, falls back to default. Usage:
+
+  @include position(absolute, 10px, 20px, 30px, 40px);
+
+  Result:
+
+  el {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    bottom: 30px;
+    left: 40px;
+  }
+*/
 @mixin position($pos, $top:'', $right:'', $bottom:'', $left:'') {
   position: $pos;
   @if ($top != '') {
@@ -28,6 +68,17 @@
   }
 }
 
+/* Container size mixin. Sets size of an element. Takes two arguments: width and height. both are optional. If not used, falls back to default. Usage:
+
+  @include container-size(100vw, 100vh);
+
+  Result:
+
+  el {
+    width: 100vw;
+    height: 100vh;
+  }
+*/
 @mixin container-size($width:'auto', $height:'auto') {
   @if ($width != '') {
     width: $width;
@@ -36,6 +87,21 @@
     height: $height;
   }
 }
+
+/* Mixin for media queries. Has to have content to work. Usage:
+
+  el {
+    @include media(1200px) {
+      background-color: red;
+    }
+  }
+  Result:
+
+  @media (min-width: 1200px) {
+  el {
+    background-color: red;
+  }
+*/
 
 @mixin media($breakpoint) {
   @media (min-width: #{$breakpoint}) {
