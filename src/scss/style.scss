@@ -78,10 +78,16 @@ body {
 
   &__logo {
     position: absolute;
-    padding: 4%;
+    width: 150px;
+    padding: 5%;
     top: 0;
     left: 0;
 
+    // min-width: 500px;
+    @include media($small) {
+      padding: 4%;
+      width: auto;
+    }
     // min-width: 780px;
     @include media($medium) {
       position: static;
@@ -165,8 +171,12 @@ body {
     margin: 10px 0 0 20px;
     font-size: $small-text;
     color: $soft-red;
-    &.err {
+    &.error-msg {
       display: block;
+    }
+    &.ok {
+      display: block;
+      color: $desaturated-red;
     }
   }
 }
@@ -224,11 +234,11 @@ body {
   }
 }
 
-.hdden {
+.hidden {
   display: none;
 }
 
-.error {
+.error-border {
   border: 1px solid $soft-red;
 }
 
@@ -244,7 +254,7 @@ body {
 
 .hero-image {
   @include container-size(100%, 45vh);
-  margin-top: calc(33px + 8%);
+  margin-top: calc(30px + 8%);
   background: {
     image: url('../../dist/img/hero-mobile.jpg');
     size: cover;
@@ -253,6 +263,10 @@ body {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 
+  // min-width: 500px;
+  @include media($small) {
+    margin-top: calc(33px + 8%);
+  }
   // min-width: 550px - additional size for this exact picture;
   @include media(550px) {
     background: {
