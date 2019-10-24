@@ -108,3 +108,9 @@
     @content;
   }
 }
+
+@mixin media-horizontal($height) {
+  @media (max-height: #{$height}) {
+    @content;
+  }
+}

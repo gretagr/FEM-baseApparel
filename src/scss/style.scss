@@ -171,6 +171,8 @@ body {
     margin: 10px 0 0 20px;
     font-size: $small-text;
     color: $soft-red;
+    text-align: left;
+
     &.error-msg {
       display: block;
     }
@@ -263,6 +265,9 @@ body {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 
+  @include media-horizontal(500px) {
+    @include container-size(100%, 100vh);
+  }
   // min-width: 500px;
   @include media($small) {
     margin-top: calc(33px + 8%);
