@@ -193,7 +193,9 @@ body {
     padding: 10px 20px;
     border: 1px solid $light-grey;
     background: transparent;
-
+    &:active {
+      background: transparent;
+    }
 
     &::-webkit-input-placeholder {
       font-family: $font-family;
