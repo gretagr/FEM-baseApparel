@@ -40,7 +40,7 @@ body {
 .main-wrapper {
   @include flex(flex, space-between, center, column-reverse);
   @include container-size(auto, 100%);
-  // min-width: 780px;
+  max-height: 100vh;
   @include media($medium) {
     @include flex(flex, space-between, center, row);
     @include container-size(100vw, 100vh);
@@ -61,7 +61,8 @@ body {
   @include media($medium) {
     @include flex(flex, flex-start, flex-start, column);
     @include container-size(65%, 100vh);
-    padding: 5% 0 0 5%;
+    max-height: 100vh;
+    padding: 2% 0 0 5%;
     background: {
       image: url('../../dist/img/bg-pattern-desktop.svg');
       size: cover;
@@ -73,7 +74,7 @@ body {
   // min-width: 1100px;
   @include media($large) {
     @include container-size(100%, 100vh);
-    padding: 7% 5% 0 10%;
+    padding: 2% 5% 0 10%;
   }
 
   &__logo {
@@ -91,8 +92,12 @@ body {
     // min-width: 780px;
     @include media($medium) {
       position: static;
-      margin: 0 0 15%;
+      margin: 12% 0 10%;
       padding: 0;
+    }
+
+    @include media-horizontal(735px) {
+      margin: 2% 0 2%;
     }
   }
 }
@@ -106,7 +111,7 @@ body {
 
   // min-width: 1100px;
   @include media($large) {
-    padding: 6% 0 0 0;
+    padding: 3% 0 0 0;
     margin-top: 0;
     font-size: $heading-big;
   }
@@ -193,6 +198,7 @@ body {
     padding: 10px 20px;
     border: 1px solid $light-grey;
     background: transparent;
+
     &:active {
       background: transparent;
     }
@@ -285,7 +291,7 @@ body {
 
   // min-width: 780px;
   @include media($medium){
-    @include container-size(100%, 100vh);
+    @include container-size(100%, 100%);
     margin-top: 0;
     background: {
       image: url('../../dist/img/hero-desktop.jpg');
