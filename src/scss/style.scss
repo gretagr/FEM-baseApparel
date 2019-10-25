@@ -92,7 +92,7 @@ body {
     // min-width: 780px;
     @include media($medium) {
       position: static;
-      margin: 12% 0 10%;
+      margin: 8% 0 10%;
       padding: 0;
     }
 
@@ -124,7 +124,7 @@ body {
 
   // min-width: 780px;
   @include media($medium) {
-    margin-top: 6%;
+    margin-top: 8%;
   }
 
   &__text--red {
@@ -145,13 +145,12 @@ body {
 
   // min-width: 500px;
   @include media($small) {
-    @include container-size(70%);
+    @include container-size(68%);
     margin: 8% auto;
   }
 
   // min-width: 780px;
   @include media($medium) {
-    @include container-size(80%);
     margin: 4% 0;
   }
 
