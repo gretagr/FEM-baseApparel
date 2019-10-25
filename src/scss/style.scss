@@ -40,10 +40,10 @@ body {
 .main-wrapper {
   @include flex(flex, space-between, center, column-reverse);
   @include container-size(auto, 100%);
-  max-height: 100vh;
   @include media($medium) {
     @include flex(flex, space-between, center, row);
     @include container-size(100vw, 100vh);
+    max-height: 100vh;
   }
 }
 
@@ -96,8 +96,10 @@ body {
       padding: 0;
     }
 
-    @include media-horizontal(735px) {
-      margin: 2% 0 2%;
+    @include media($medium){
+      @include media-horizontal(735px) {
+        margin: 2% 0 2%;
+      }
     }
   }
 }
@@ -114,6 +116,10 @@ body {
     padding: 3% 0 0 0;
     margin-top: 0;
     font-size: $heading-big;
+
+    @include media-horizontal(600px) {
+      font-size: $heading-small;
+    }
   }
 
   // min-width: 780px;
